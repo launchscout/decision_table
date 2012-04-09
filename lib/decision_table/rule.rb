@@ -1,23 +1,18 @@
 module DecisionTable
   class Rule
     
-    attr_accessor :measure, :criteria, :result
+    attr_accessor :criteria, :result
     
-    def initialize(measure, criteria, result)
-      @measure = measure
+    def initialize(criteria, result)
       @criteria = criteria
       @result = result
     end
     
-    def applies?
+    def applies?(candidate)
       criteria.all? do |k, v|
-        v.blank? || matches(k, v)
+        v.blank? || candidate.send(k) == v
       end
     end
-    
-    def matches(k, v)
-      measure.send(k) == v
-    end
-    
+        
   end
 end
