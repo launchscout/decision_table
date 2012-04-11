@@ -7,7 +7,7 @@ module DecisionTable
     
     def evaluate(candidate)
       rule = rules.detect { |rule| rule.applies?(candidate) }
-      rule.result
+      rule.result if rule
     end
   end
 end

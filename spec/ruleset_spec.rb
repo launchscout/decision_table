@@ -17,7 +17,10 @@ module DecisionTable
         Given(:ruleset) { Ruleset.new [first_rule, second_rule] }
         Then { ruleset.evaluate(candidate).should == "first_result"}
       end
-      context "no applicable rules"
+      context "no applicable rules" do
+        Given(:rule) { Rule.new({baz: "not bing"}, "first_result") }
+        Then { Ruleset.new([rule]).evaluate(candidate).should be_nil }
+      end
     end
   end
 end
