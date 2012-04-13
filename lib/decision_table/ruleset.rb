@@ -9,5 +9,10 @@ module DecisionTable
       rule = rules.detect { |rule| rule.applies?(candidate) }
       rule.result if rule
     end
+    
+    def self.parse_csv(csv)
+      data = FasterCSV.parse(csv)
+      keys = data.shift
+    end
   end
 end

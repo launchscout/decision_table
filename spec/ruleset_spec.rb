@@ -22,5 +22,12 @@ module DecisionTable
         Then { Ruleset.new([rule]).evaluate(candidate).should be_nil }
       end
     end
+    
+    describe "parsing CSV" do
+      pending "maybe later"
+      # Given(:csv_data) { File.read(File.join(File.dirname(__FILE__), "rules.csv")) }
+      # When(:ruleset) { Ruleset.parse_csv(csv_data) }
+      # Then { ruleset.rules.size.should == 2}
+    end
   end
 end
