@@ -20,15 +20,3 @@ result of the first applicable rule, applicable being defined as a match for all
 For cases where you only have a single applicable rule, you can express it as string like so:
 
 bc..  drinks_coffee?:false,writes_ruby?:true,number_of_children:2
-    
-
-
-
-
-
-
-
-
-
-
-
