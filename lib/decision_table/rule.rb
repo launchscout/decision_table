@@ -4,8 +4,16 @@ module DecisionTable
     attr_accessor :criteria, :result
     
     def initialize(criteria, result)
-      @criteria = criteria
-      @result = result
+      if criteria.is_a?(Hash)
+        @criteria = criteria
+        @result = result
+      else
+        @criteria = {}
+        keys = criteria
+        values = result
+        keys.each_with_index { |key, index| @criteria[key] = values[index] }
+        @result = values.last
+      end
     end
     
     def applies?(candidate)

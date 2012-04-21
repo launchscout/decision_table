@@ -3,6 +3,12 @@ require 'spec_helper'
 describe DecisionTable::Rule do
   Given(:candidate) { double(:candidate, :foo => "bar", :bing => "baz") }
   
+  describe "constructing from arrays" do
+    Given(:rule) { DecisionTable::Rule.new(["foo", "bing"], ["bar", "baz", "result"])}
+    Then { rule.applies?(candidate).should be_true }
+    Then { rule.result.should == "result" }
+  end
+  
   describe("applies") do
     context "when all values match" do
       Given(:rule) { DecisionTable::Rule.new({:foo => "bar", :bing => "baz"}, true) }

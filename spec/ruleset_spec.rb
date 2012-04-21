@@ -23,6 +23,12 @@ module DecisionTable
       end
     end
     
+    describe "instantiating from 2d array of strings" do
+      Given(:ruleset) { Ruleset.new [["foo", "baz"],["bar", "bing", true]]}
+      Then { ruleset.rules.size.should == 1}
+      Then { ruleset.evaluate(candidate).should == true }
+    end
+    
     describe "parsing CSV" do
       pending "maybe later"
       # Given(:csv_data) { File.read(File.join(File.dirname(__FILE__), "rules.csv")) }

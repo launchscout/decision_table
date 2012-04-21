@@ -5,3 +5,4 @@ pkg/*
 .redcar
 vendor/ruby
 bin
+.rvmrc
