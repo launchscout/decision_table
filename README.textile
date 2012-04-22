@@ -1,22 +1,30 @@
 h1.  Decision Table
  
-decision_table is a gem to build parse and evaluate simple rules than can be expressed as a table.  We've 
-extracted this gem from real world projects and hope it can be useful for others.  A simple example is probably the
+decision_table is a gem to build, parse and evaluate simple rules than can be expressed in a table.  We've 
+extracted this gem from code on real projects and seen in come in quite handy elsewhere.  A simple example is probably the
 best way to show what it's all about
 
-Let's say you're building a system to recommend home improvements to homeowners.  For each recommendation, the product 
-owner has a table that expresses how to decide if a recommendation applies or not.  Here's the example rule to 
-determine if we need to recommend replacing insulation in the attic:
+Let's say you're building a system to recommend home improvements to homeowners.  For each improvement, 
+there is a table that expresses how to decide if an improvement is recommended.  
+Here's the example rule to determine if replacing insulation in the attic is recommended:
 
 | is_well_insulated?  | attic_accessible? | recommended     |
 | true                |                   | false           |
 | false               | true              | true            |
 | false               | flase             | false           |
 
-decision_table will interpret table such as this expressed as a 2D array or CSV and produce a DecisionTable::Ruleset.  
-A ruleset, when given a domain object that implements insulation_r_value and attr_accessible? methods, will return the 
-result of the first applicable rule, applicable being defined as a match for all non-blank colums.
+decision_table will interpret tables like this expressed as a 2D array and produce a DecisionTable::Ruleset.  
+A ruleset, when given a domain object that implements insulation_r_value and attr_accessible? methods, 
+will return the result of the first applicable rule, applicable being defined as a match for all 
+non-blank colums.
 
 For cases where you only have a single applicable rule, you can express it as string like so:
 
 bc..  drinks_coffee?:false,writes_ruby?:true,number_of_children:2
+
+h2. Other stuff you should look at
+
+This gem is just what you want if you can already express your rules in this format and know the order of 
+precedence.  If you don't know this, you might need some fancier machine-learning classification thingie. 
+In this case, might I recommend taking a look at "ai4r":ai4r.rubyforge.org.  In particular the ID3 decision 
+trees algorithm might be what you need.
