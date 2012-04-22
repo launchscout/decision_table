@@ -1,12 +1,8 @@
 h1.  Decision Table
  
-decision_table is a gem to build, parse and evaluate simple rules than can be expressed in a table.  We've 
-extracted this gem from code on real projects and seen in come in quite handy elsewhere.  A simple example is probably the
-best way to show what it's all about
+decision_table is a gem to build, parse and evaluate simple rules than can be expressed in a table.  We've extracted this gem from code on real projects and seen in come in quite handy elsewhere.  A simple example is probably the best way to show what it's all about.
 
-Let's say you're building a system to recommend home improvements to homeowners.  For each improvement, 
-there is a table that expresses how to decide if an improvement is recommended.  
-Here's the example rule to determine if replacing insulation in the attic is recommended:
+Let's say you're building a system to recommend home improvements to homeowners.  For each improvement, there is a table that expresses how to decide if an improvement is recommended.  Here's the example rule to determine if replacing insulation in the attic is recommended:
 
 | is_well_insulated?  | attic_accessible? | recommended     |
 | true                |                   | false           |
