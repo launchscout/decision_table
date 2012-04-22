@@ -20,7 +20,4 @@ bc..  drinks_coffee?:false,writes_ruby?:true,number_of_children:2
 
 h2. Other stuff you should look at
 
-This gem is just what you want if you can already express your rules in this format and know the order of 
-precedence.  If you don't know this, you might need some fancier machine-learning classification thingie. 
-In this case, might I recommend taking a look at "ai4r":ai4r.rubyforge.org.  In particular the ID3 decision 
-trees algorithm might be what you need.
+This gem is just what you want if you can already express your rules in this format and know the order of precedence.  If you don't know this, you might need some fancier machine-learning classification thingie. In this case, might I recommend taking a look at "ai4r":http://ai4r.rubyforge.org.  In particular the ID3 decision trees algorithm might be what you need.
